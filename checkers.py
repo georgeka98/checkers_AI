@@ -49,7 +49,7 @@ class checkers:
                 if row + 2 == len(self.board) - 1: # if on 8th row
                   total_positions[-1] = [[row,col],[4,[row+2,col-2]]]
             if col+1 <= len(self.board[row]) - 1 and self.board[row+1][col+1] == "O": # right diagnonaly
-              if col+2 >= 0 and self.board[row+2][col+2] == "-":
+              if col+2 <= len(self.board[row]) - 1 and self.board[row+2][col+2] == "-":
                 total_positions.append([[row,col],[2,[row+2,col+2]]])
                 if row + 2 == len(self.board) - 1: # if on 8th row
                   total_positions[-1] = [[row,col],[4,[row+2,col+2]]]
@@ -70,7 +70,7 @@ class checkers:
                 if row - 2 == 0: # if on 0th row
                   total_positions[-1] = [[row,col],[4,[row-2,col-2]]]
             if col+1 <= len(self.board[row]) - 1 and self.board[row-1][col+1] == "X": # right diagnonaly
-              if col+2 >= 0 and self.board[row-2][col+2] == "-":
+              if col+2 <= len(self.board[row]) - 1 and self.board[row-2][col+2] == "-":
                 total_positions.append([[row,col],[2,[row-2,col+2]]])
                 if row - 2 == 0: # if on 0th row
                   total_positions[-1] = [[row,col],[4,[row-2,col+2]]]
